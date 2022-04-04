@@ -8,16 +8,16 @@ class LMercadoPago
 {
     public function createButton()
     {
-        MercadoPago\SDK::setAccessToken("TEST-5598546372512178-021515-bfd9e67e24722569ea7640c6d9a48a11-209806929");
-        MercadoPago\SDK::setClientId("5598546372512178");
-        MercadoPago\SDK::setClientSecret("XCx6D7EgrlnOIT2SXSw5NYTVBDX1kpzu");
+        \MercadoPago\SDK::setAccessToken("TEST-5598546372512178-021515-bfd9e67e24722569ea7640c6d9a48a11-209806929");
+        \MercadoPago\SDK::setClientId("5598546372512178");
+        \MercadoPago\SDK::setClientSecret("XCx6D7EgrlnOIT2SXSw5NYTVBDX1kpzu");
 
 
-        $preference                     = new MercadoPago\Preference();
+        $preference                     = new \MercadoPago\Preference();
 
 
 
-        $item                           = new MercadoPago\Item();
+        $item                           = new \MercadoPago\Item();
         $item->id                       = "00001";
         $item->title                    = "item";
         $item->quantity                 = 1;
@@ -48,7 +48,7 @@ class LMercadoPago
 
 
         $url_mercado_pago               = $preference->sandbox_init_point;
-        return $url_mercado_pago;
+        return array('url' => $url_mercado_pago, 'token' => $token_user);
     }
 
     private function generateToken()

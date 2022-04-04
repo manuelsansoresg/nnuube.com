@@ -116,6 +116,7 @@
                                                                             alt="">
                                                                         @else
                                                                             <img class="img-fluid" id="preview"
+                                                                            
                                                                             wire:ignore
                                                                             src="{{  asset('storage/' . $data['imagen']) }}"
                                                                             alt="">

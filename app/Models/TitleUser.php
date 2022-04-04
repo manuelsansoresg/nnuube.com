@@ -29,4 +29,17 @@ class TitleUser extends Model
                         ->paginate(20);
         return $title_user;
     }
+
+    public static function activateTitle($request)
+    {
+        $token = $request->token;
+        $title = TitleUser::where('token', $token)->first();
+        if ($title != null) {
+            $title->status_pay = 1;
+            $title->token      = '';
+            $title->update();
+        }
+        return $title;
+    }
+
 }

@@ -1,5 +1,7 @@
 require('./bootstrap');
 require('./components/descubre.js');
+require('./components/star.js');
+
 $(document).ready(function () {
     $('.dropdown-toggle').dropdown()
 });

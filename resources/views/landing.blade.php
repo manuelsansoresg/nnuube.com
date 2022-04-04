@@ -5,7 +5,7 @@
         <div class="row mt-4 justify-content-center" id="rnd-title" style="display: none">
             <div class="col-1">
                 <a class="lnk-random" href="">
-                    <img class="rounded-circle img-fluid" id="img-rand">
+                    <img class="rounded-circle img-fluid thumb-random" id="img-rand">
                 </a>
                 <p class="text-center">
                     <a class="lnk-random" href="">
@@ -43,8 +43,8 @@
                        
                     </div>
                 </div>
-        </div>
+            </div>
         {{-- /busqueda --}}
-    </div>
+        </div>
 
 @endsection

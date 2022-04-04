@@ -1,5 +1,5 @@
 @extends('layouts.livewire-layout')
-@section('title', $title->titulo)
+@section('title', $titulo)
 @section('content')
-    @livewire('title-component', ['title_id' => $title->id])
+    @livewire('title-component', ['title_id' => $title_id])
 @endsection

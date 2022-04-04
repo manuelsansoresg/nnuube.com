@@ -6,3 +6,25 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.thumb{
+    width:50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.thumb-random{
+    width:70px;
+    height: 70px;
+    object-fit: cover;
+}
+
+.description{
+    font-size:16px
+}
+
+#rate {
+    width: 100% !important;
+    display: flex !important;
+    justify-content:center !important;
+}

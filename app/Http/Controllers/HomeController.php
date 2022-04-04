@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TitleRating;
 use App\Models\TitleUser;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->path_image = 'img/title';
+        $this->path_image = 'storage';
     }
 
     /**
@@ -47,6 +48,33 @@ class HomeController extends Controller
     public function titleEdit($title_id)
     {
         $title = TitleUser::find($title_id);
-        return view('content_title', compact('title'));
+        $titulo = $title->titulo;
+        $title_id = $title->id;
+        return view('content_title', compact('titulo', 'title_id'));
     }
+
+    public function myTitles()
+    {
+        return view('my_titles');
+    }
+
+    public function titleCreate()
+    {
+        $titulo   = 'Nuevo título';
+        $title_id = null;
+        
+        return view('content_title', compact('titulo', 'title_id'));
+    }
+
+    public function titleShow($slug)
+    {
+        $title  = TitleUser::where('slug', $slug)->first();
+        return view('title', compact('title'));
+    }
+
+    public function rateTitle($title_id, $rate)
+    {
+        return TitleRating::saveEdit($title_id, $rate);
+    }
+
 }

@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title> Nnuube - @yield('title') </title>
+    <title> @yield('title') - Nnuube</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -26,9 +26,22 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Descubre
-                </a>
+                @guest
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        Inicio
+                    </a>
+                @else
+                   
+                    @if (Request::segment(1) !== null)
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            Inicio
+                        </a>
+                        @else
+                        <a class="navbar-brand" href="{{ url('/titulos') }}">
+                            Mis titulos
+                        </a>
+                    @endif
+                @endguest
              {{--    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button> --}}
@@ -70,6 +83,8 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+
+                                   
                                 </div>
                             </li>
                         @endguest

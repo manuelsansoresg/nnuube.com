@@ -1,18 +1,26 @@
 <div>
+   
+   
    <div class="row justify-content-center">
-    <div class="col-10 col-md-8">
-        <div class="input-group">
-            <input type="text" class="form-control" wire:model='searchTitle'>
-            <div class="input-group-append">
-                <button class="btn btn-outline-primary" type="button">
-                    <i class="fa fa-search search-home"></i>
-                </button>
-    
+        <div class="col-10 col-md-8">
+            <div class="input-group">
+                <input type="text" class="form-control" wire:model='searchTitle'>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary" type="button">
+                        <i class="fa fa-search search-home"></i>
+                    </button>
+        
+                </div>
+        
             </div>
-    
+        </div>
+   </div>
+
+   <div class="row justify-content-center mt-3">
+        <div class="col-10 text-center">
+            <a href="/titulo/crear" class="btn btn-outline-primary col-12 col-md-4"><i class="fas fa-tag"></i> Comprar título</a>
         </div>
     </div>
-   </div>
     
     {{-- titulos --}}
 
@@ -35,7 +43,7 @@
                             <div class="col-3 col-md-2 offset-md-1" >
                                 @if ($title->imagen != '')
                                     <a  href="/titulo/{{ $title->slug }}">
-                                        <img src="{{  asset('storage/' . $title->imagen) }}"   alt="Profiler" class="rounded-circle col-7 shadow img-fluid">
+                                        <img src="{{  asset('storage/' . $title->imagen) }}"  alt="Profiler" class="rounded-circle shadow img-fluid thumb">
                                     </a>
                                 @endif
         
@@ -59,7 +67,7 @@
                             <div class="col-3 col-md-3 align-self-center">
                                 <button  type="button"  class="btn btn-outline-primary btn-rounded ml-2 btn-rounded  shadow px-2 py-0 py-md-1 px-md-3">Dar <i class="fas fa-heart heart-small text-danger"></i> </button>
                                 @if (Auth::id() == $title->user_id)
-                                    <a  href="/titulo/{{ $title->id }}/edit" class="btn btn-outline-primary btn-rounded ml-2 btn-rounded  shadow px-2 py-0 py-md-1 px-md-3"> <i class="fas fa-edit"></i> </a>
+                                    {{-- <a  href="/titulo/{{ $title->id }}/edit" class="btn btn-outline-primary btn-rounded ml-2 btn-rounded  shadow px-2 py-0 py-md-1 px-md-3"> <i class="fas fa-edit"></i> </a> --}}
                                 @endif
                             </div>
                             <div class="w-100 d-block d-md-none"></div>

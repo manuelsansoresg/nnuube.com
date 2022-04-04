@@ -2,10 +2,13 @@
 
 namespace App\Http\Livewire;
 
+use App\Lib\LMercadoPago;
 use App\Models\TitleUser;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Str;
 
 class TitleComponent extends Component
 {
@@ -14,6 +17,8 @@ class TitleComponent extends Component
     public $title;
     public $data;
     public $file;
+    public $btnMercadoPago;
+    public $tokenMercadoPago;
 
     public function mount($title_id = null)
     {
@@ -32,6 +37,11 @@ class TitleComponent extends Component
             $this->title_id =  $title_id;
             $this->title = TitleUser::find($title_id);
             $this->data =  $this->title->toArray();
+        } else {
+            $mercado_pago           = new LMercadoPago();
+            $get_mercado_pago       = $mercado_pago->createButton();
+            $this->btnMercadoPago   = $get_mercado_pago['url'];
+            $this->tokenMercadoPago = $get_mercado_pago['token'];
         }
     }
 
@@ -51,10 +61,18 @@ class TitleComponent extends Component
             $file = $this->file->store('files', 'public');
             $this->data['imagen'] = $file;
         }
+        
+        $this->data['slug'] = Str::slug($this->data['titulo']);
 
         if ($this->title != '') {
             $this->title->fill($this->data);
             $this->title->update();
+        } else {
+            $this->data['user_id'] = Auth::user()->id;
+            $this->data['token'] = $this->tokenMercadoPago;
+            $title = new TitleUser($this->data);
+            $title->save();
+            return redirect($this->btnMercadoPago);
         }
 
     }

@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> {{ $title->titulo }} </title>
+    <title> {{ $title->titulo }} - Nnuube </title>
     <meta name="description" content="{{ \Illuminate\Support\Str::limit($title->descripcion, 155) }}">
     <meta name="keywords" content="{{ $title->palabras_clave }}">
     <meta property="og:site_name" content="nnuube">
-    <meta property="og:title" content="{{ $title->titulo }}">
+    <meta property="og:title" content="{{ $title->titulo }} - Nnuube">
     <meta property="og:description" content="{{ \Illuminate\Support\Str::limit($title->descripcion, 155) }}">
     <meta property="og:type" content="website">
     <meta property="og:image" content="{{  asset('storage/' . $title->imagen) }}">
@@ -19,7 +19,7 @@
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@nnuube">
-    <meta name="twitter:title" content="{{ $title->titulo }}">
+    <meta name="twitter:title" content="{{ $title->titulo }} - Nnuube">
     <meta name="twitter:description" content="{{ \Illuminate\Support\Str::limit($title->descripcion, 155) }}">
     <meta name="twitter:creator" content="@nnuube">
     <meta name="twitter:image" content="{{  asset('storage/' . $title->imagen) }}">

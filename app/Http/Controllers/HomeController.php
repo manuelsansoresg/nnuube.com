@@ -77,4 +77,9 @@ class HomeController extends Controller
         return TitleRating::saveEdit($title_id, $rate);
     }
 
+    public function profile()
+    {
+        
+    }
+
 }

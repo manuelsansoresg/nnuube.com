@@ -1,3 +1,4 @@
+@inject('title_rating', 'App\Models\TitleRating')
 <div>
    
    
@@ -29,8 +30,8 @@
             <div class="list-title">
                 <div class="row mt-5">
                     <div class="col-6 col-md-4 offset-0 offset-md-1"><span class="font-weight-bold text-muted">Palabras Clave</span></div>
-                    <div class="col-1 col-md-1 offset-1 offset-md-3"> <i class="fas fa-heart heart-small text-danger heart"></i></div>
-                    <div class="col-1 col-md-2 offset-1 offset-md-0 text-md-center"> <a><i class="fas fa-eye-slash text-muted eye-show"></i></a> </div>
+                    <div class="col-1 col-md-1 offset-1 offset-md-3"> Calificaciones </div>
+                    {{-- <div class="col-1 col-md-2 offset-1 offset-md-0 text-md-center"> <a><i class="fas fa-eye-slash text-muted eye-show"></i></a> </div> --}}
                 </div>
                 <div class="row">
                     <div class="col-12 mt-n2"><hr></div>
@@ -61,15 +62,29 @@
                                     </a>
                                 </div>
                             @endif
-                            <div class="col-1 col-md-1 align-self-center">
-                                <small>{{ $title->heart }}</small>
+                            <div class="col-1 col-md-3 align-self-center">
+                                <?php $stars = $title_rating->getRateByTitle($title->id); ?>
+                                <small>
+                                    <ul class="list-inline">
+                                        @if ($stars > 0)
+                                            @for ($i = 0; $i < $stars; $i++)
+                                                <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                            @endfor
+                                        @else
+                                            <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                                        @endif
+                                        
+                                    </ul>
+                                </small>
                             </div>
-                            <div class="col-3 col-md-3 align-self-center">
+                            {{-- <div class="col-3 col-md-3 align-self-center">
+                                
+                                
                                 <button  type="button"  class="btn btn-outline-primary btn-rounded ml-2 btn-rounded  shadow px-2 py-0 py-md-1 px-md-3">Dar <i class="fas fa-heart heart-small text-danger"></i> </button>
                                 @if (Auth::id() == $title->user_id)
-                                    {{-- <a  href="/titulo/{{ $title->id }}/edit" class="btn btn-outline-primary btn-rounded ml-2 btn-rounded  shadow px-2 py-0 py-md-1 px-md-3"> <i class="fas fa-edit"></i> </a> --}}
+                                    <a  href="/titulo/{{ $title->id }}/edit" class="btn btn-outline-primary btn-rounded ml-2 btn-rounded  shadow px-2 py-0 py-md-1 px-md-3"> <i class="fas fa-edit"></i> </a>
                                 @endif
-                            </div>
+                            </div> --}}
                             <div class="w-100 d-block d-md-none"></div>
         
                         </div>

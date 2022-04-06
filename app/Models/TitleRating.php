@@ -39,14 +39,9 @@ class TitleRating extends Model
     {
         $rate = TitleRating::select(DB::raw('COUNT(rate) as rating_count, SUM(rate) as rating_total'))
                 ->where('title_user_id', $title_id)->first();
-        if ($rate !== null) {
-            try {
-                round(($rate->rating_total / $rate->rating_count), 1);
-            } catch (\Exception $e) {
-                //throw $th;
-            }
-            
+        if ($rate != null) {
+            return ($rate->rating_total>0)?round(($rate->rating_total / $rate->rating_count), 1):0;
         }
-        return 0;
     }
+    
 }

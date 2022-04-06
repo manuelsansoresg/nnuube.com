@@ -23,6 +23,7 @@ $(function () {
         axios.get('/titulo/' + title_id + '/' + rate+'/rate')
         .then(function (response) {
             let result = response.data;
+            console.log(result);
             Livewire.emit('setRate', title_id)
 
         })

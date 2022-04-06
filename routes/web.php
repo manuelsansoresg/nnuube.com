@@ -30,6 +30,8 @@ Route::get('/titulo/{slug}', [App\Http\Controllers\HomeController::class, 'title
 
 Route::get('/titulo/{title_id}/{rate}/rate', [App\Http\Controllers\HomeController::class, 'rateTitle']);
 
+Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile']);
+
 
 /**
  * area de pago

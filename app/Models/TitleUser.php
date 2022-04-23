@@ -15,7 +15,7 @@ class TitleUser extends Model
         
     public static function random()
     {
-        $user = TitleUser::select('id', 'titulo', 'imagen')
+        $user = TitleUser::select('id', 'titulo', 'imagen', 'slug')
             ->orderBy('heart', 'desc')
             ->limit(200)->get();
 

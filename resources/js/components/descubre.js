@@ -34,7 +34,7 @@ $(function () {
 
             if (cont <= total_titles){
                 var image = '/' + path + '/' + title[cont-1].imagen;
-                var profile = '/usuario/'+title[cont-1].id; 
+                var profile = '/titulo/'+title[cont-1].slug; 
                 $('#rnd-title').show();
                 $('#img-rand').attr('src', image);
                 $('.lnk-random').attr('href', profile);

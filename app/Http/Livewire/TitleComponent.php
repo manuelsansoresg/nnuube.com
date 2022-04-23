@@ -55,13 +55,16 @@ class TitleComponent extends Component
         
         if ($this->file != null) {
             $imagen_anterior = $this->data['imagen'];
-            @unlink('storage/'.$imagen_anterior);
-            $file = $this->file->store('img/title', 'public');
-            $this->data['imagen'] = $file;
+            @unlink('img/title/'.$imagen_anterior);
+
+            $imageName = time(). '_'. $this->file->getClientOriginalExtension();
+
+            $this->file->storeAs('img/title', $imageName, 'public_uploads');
+
+            $this->data['imagen'] = $imageName;
         }
         
         $this->data['slug'] = Str::slug($this->data['titulo']);
-
         if ($this->title != '') {
             $this->title->fill($this->data);
             $this->title->update();

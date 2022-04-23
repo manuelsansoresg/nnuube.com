@@ -18,7 +18,7 @@
                     </p>
                     <br>
                     <div class="text-center">
-                        <a class="btn btn-primary" href="/titulos" role="button">Regresar al sitio</a>
+                        <a class="btn btn-primary" href="/" role="button">Regresar al sitio</a>
                     </div>
                 </div>
                 

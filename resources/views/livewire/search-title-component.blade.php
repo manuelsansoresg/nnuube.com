@@ -44,7 +44,7 @@
                             <div class="col-3 col-md-2 offset-md-1" >
                                 @if ($title->imagen != '')
                                     <a  href="/titulo/{{ $title->slug }}">
-                                        <img src="{{  asset('storage/' . $title->imagen) }}"  alt="Profiler" class="rounded-circle shadow img-fluid thumb">
+                                        <img src="{{  asset('img/title/' . $title->imagen) }}"  alt="Profiler" class="rounded-circle shadow img-fluid thumb">
                                     </a>
                                 @endif
         

@@ -3,11 +3,13 @@
 @section('content')
     <div class="container" >
         <div class="row mt-4 justify-content-center" id="rnd-title" style="display: none">
-            <div class="col-1">
-                <a class="lnk-random" href="">
-                    <img class="rounded-circle img-fluid thumb-random" id="img-rand">
-                </a>
-                <p class="text-center">
+            <div class="col-6">
+                <div class="text-center">
+                    <a class="lnk-random text-align-center" href="">
+                        <img class="rounded-circle img-fluid thumb-random" id="img-rand">
+                    </a>
+                </div>
+                <p class="text-center text-truncate">
                     <a class="lnk-random" href="">
                         <span id="user-random" class="badge bg-info"></span>
                     </a>

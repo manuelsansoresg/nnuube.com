@@ -26,14 +26,15 @@ class SearchTitleComponent extends Component
         $searchTerm = '%'.$this->searchTitle.'%';
         if ($this->my_titles === false) {
             if ($this->searchTitle !== '') {
-                $title_user = TitleUser::where('titulo', 'like', $searchTerm)
+                $title_user = TitleUser::select('title_user.id', 'slug', 'imagen', 'title_user.user_id', 'titulo')
+                ->where('titulo', 'like', $searchTerm)
                 ->where('status_pay', 1)
                 ->leftJoin('title_ratings', 'title_ratings.title_user_id', '=', 'title_user.id')
                 ->orderBy('rate', 'DESC')
                 ->paginate(50);
             } else {
                 $title_user = TitleUser::
-                where('status_pay', 1)
+                select('title_user.id', 'slug', 'imagen', 'title_user.user_id', 'titulo')->where('status_pay', 1)
                 ->leftJoin('title_ratings', 'title_ratings.title_user_id', '=', 'title_user.id')
                 ->orderBy('rate', 'DESC')
                 ->paginate(50);
@@ -41,14 +42,16 @@ class SearchTitleComponent extends Component
            
         } else {
             if ($this->searchTitle !== '') {
-                $title_user = TitleUser::where('title_user.user_id', Auth::user()->id)
+                $title_user = TitleUser::
+                select('title_user.id', 'slug', 'imagen', 'title_user.user_id', 'titulo')->where('title_user.user_id', Auth::user()->id)
                 ->leftJoin('title_ratings', 'title_ratings.title_user_id', '=', 'title_user.id')
                 ->where('titulo', 'like', $searchTerm)
                 ->where('status_pay', 1)
                 ->orderBy('rate', 'DESC')
                 ->paginate(50);
             } else {
-                $title_user = TitleUser::where('title_user.user_id', Auth::user()->id)
+                $title_user = TitleUser::
+                select('title_user.id', 'slug', 'imagen', 'title_user.user_id', 'titulo')->where('title_user.user_id', Auth::user()->id)
                 ->leftJoin('title_ratings', 'title_ratings.title_user_id', '=', 'title_user.id')
                 ->where('status_pay', 1)
                 ->orderBy('rate', 'DESC')

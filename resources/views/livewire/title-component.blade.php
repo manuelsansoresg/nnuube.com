@@ -204,10 +204,10 @@
                                             <h5 class="card-title text-muted text-center py-3">¿ QUE ESTOY COMPRANDO?
                                             </h5>
                                             <hr class="px-5">
-                                            <div class="mt-5">
+                                            <div class="mt-4">
                                                 <p class="h5 text-center"> <span class="fw-bold">T</span>arjeta
-                                                    <span class="fw-bold">T</span>irtual <span
-                                                        class="fw-bold">T</span>ndexada <span
+                                                    <span class="fw-bold">V</span>irtual <span
+                                                        class="fw-bold">I</span>ndexada <span
                                                         class="h6">TVI</span> <span class="fw-bold">a
                                                         Google</span> </p>
                                                 <p class="h5 text-center mt-3"> <span class="fw-bold">¿Qué se
@@ -216,7 +216,7 @@
                                                 <p class="h5 text-center mt-3"> <span class="fw-bold">¿De
                                                         que?</span>
                                                     Personas, Marcas, Establecimientos, Productos, Servicios, TODO. </p>
-                                                <p class="h5 text-center mt-3"> <span class="fw-bold">Cómo
+                                                <p class="h5 text-center mt-3"> <span class="fw-bold">¿Cómo
                                                         alcanzar
                                                         el 1er Listado de Resultados en Google?</span></p>
                                                 <p class="h5 text-center mt-3"> <span class="fw-bold"> - Comprar

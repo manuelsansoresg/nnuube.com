@@ -55,26 +55,29 @@
             </div>
         </div>
         {{-- <form wire:submit.prevent="storeComment()"> --}}
-            <div class="row justify-content-center mt-5">
-                <div class="col-12 col-md-10">
-                    <p class="text-center text-muted"> COMENTARIOS </p>
-                    <input type="hidden" id="title_id" value="{{ $title->id }}">
-                    <input type="hidden" id="rateMyTitle" value="{{ $rate }}">
-                    <hr>
-                </div>
-                <div class="col-12"></div>
-                <div class="col-12 col-md-10">
-                    <div class="mb-3">
-                        <textarea wire:model="comment" id="" cols="30" rows="4" class="form-control"></textarea>
+            <form action="" wire:submit.prevent="storeComment()">
+                <div class="row justify-content-center mt-5">
+                   
+                    <div class="col-12 col-md-10">
+                        <p class="text-center text-muted"> COMENTARIOS </p>
+                        <input type="hidden" id="title_id" value="{{ $title->id }}">
+                        <input type="hidden" id="rateMyTitle" value="{{ $rate }}">
+                        <hr>
                     </div>
-                </div>
-                <div class="col-12"></div>
-
-                <div class="col-12 col-md-10 text-end">
-                    <button type="button" class="btn btn-outline-primary col-md-3" wire:click="storeComment">Comentar</button>
-                </div>
+                    <div class="col-12"></div>
+                    <div class="col-12 col-md-10">
+                        <div class="mb-3">
+                            <textarea wire:model="comment" id="" cols="30" rows="4" class="form-control" required></textarea>
+                        </div>
+                    </div>
+                    <div class="col-12"></div>
     
-            </div>
+                    <div class="col-12 col-md-10 text-end">
+                        <button type="submit" class="btn btn-outline-primary col-md-3">Comentar</button>
+                    </div>
+        
+                </div>
+            </form>
         {{-- </form> --}}
 
         <div class="row justify-content-center mt-5">

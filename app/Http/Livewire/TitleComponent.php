@@ -52,13 +52,11 @@ class TitleComponent extends Component
 
     public function store()
     {
-        Artisan::call('storage:link');
-        
         
         if ($this->file != null) {
             $imagen_anterior = $this->data['imagen'];
             @unlink('storage/'.$imagen_anterior);
-            $file = $this->file->store('files', 'public');
+            $file = $this->file->store('img/title', 'public');
             $this->data['imagen'] = $file;
         }
         

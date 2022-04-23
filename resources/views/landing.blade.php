@@ -19,12 +19,9 @@
         {{-- leyenda --}}
         <div class="col-12 text-center mt-2 pb-5 ">
             <p class="h4 mt-n3 landing__title">
-                Regala amor
+                Tarjetas Virtuales Indexadas
             </p>
-            <p>
-                <i class="fas fa-heart heart-small text-danger"></i>
-            </p>
-            <p class="mt-n3 h4 landing__subtitle">tus corazones se renuevan cada primero de mes</p>
+            
             <div class="row">
                 <div class="col-10 offset-1">
 

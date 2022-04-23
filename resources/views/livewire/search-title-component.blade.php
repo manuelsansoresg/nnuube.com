@@ -30,7 +30,7 @@
             <div class="list-title">
                 <div class="row mt-5">
                     <div class="col-6 col-md-4 offset-0 offset-md-1"><span class="font-weight-bold text-muted">Palabras Clave</span></div>
-                    <div class="col-1 col-md-1 offset-1 offset-md-3"> Calificaciones </div>
+                    <div class="col-1 col-md-1 offset-1 offset-md-3"> Calificación </div>
                     {{-- <div class="col-1 col-md-2 offset-1 offset-md-0 text-md-center"> <a><i class="fas fa-eye-slash text-muted eye-show"></i></a> </div> --}}
                 </div>
                 <div class="row">
@@ -108,7 +108,7 @@
    <div class="modal-dialog modal-dialog-centered" role="document">
        <div class="modal-content modal-content-corazones">
            <div class="modal-header">
-               <h5 class="modal-title" id="corazonesModalLabel">Regala amor</h5>
+               <h5 class="modal-title" id="corazonesModalLabel">Tarjetas Virtuales Indexadas</h5>
                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span aria-hidden="true">&times;</span>
                </button>
@@ -133,9 +133,7 @@
                                <small class="text-danger registro-corazones icorazones"></small>
                            </div>
                        </div>
-                       <div class="form-row">
-                           <span class="small mt-2 add-heart-footer">TUS CORAZÓNES SE RENUEVAN CADA MES</span>
-                       </div>
+                       
                    </form>
                </div>
            </div>

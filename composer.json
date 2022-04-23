@@ -12,6 +12,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
+        "laravelium/sitemap": "^8.0",
         "livewire/livewire": "^2.10",
         "mercadopago/dx-php": "^2.4",
         "verot/class.upload.php": "dev-master"

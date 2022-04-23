@@ -1,10 +1,26 @@
 require('./bootstrap');
+import Swal from 'sweetalert2'
+
 require('./components/descubre.js');
 require('./components/star.js');
 
 $(document).ready(function () {
     $('.dropdown-toggle').dropdown()
 });
+
+
+window.Livewire.on('updatePerfil', status => {
+    Swal.fire({
+        text: 'Usuario actualizado',
+        icon: 'success',
+      })
+})
+window.Livewire.on('updatePassword', status => {
+    Swal.fire({
+        text: 'Password actualizado',
+        icon: 'success',
+      })
+})
 
 
 window.valImage = function (obj) {

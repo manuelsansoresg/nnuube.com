@@ -33,7 +33,7 @@ Route::get('/titulo/{title_id}/{rate}/rate', [App\Http\Controllers\HomeControlle
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile']);
 Route::get('/password/set', [App\Http\Controllers\HomeController::class, 'setPassword']);
 
-Route::get('sitemap.xml', [App\Http\Controllers\HomeController::class, 'sitemap']);
+Route::get('sitemap.xml', [App\Http\Controllers\SitemapController::class, 'index']);
 
 /**
  * area de pago

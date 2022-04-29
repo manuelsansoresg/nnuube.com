@@ -31,7 +31,7 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::id()) {
-          
+
             return view('landing');
         } else {
             return view('welcome');
@@ -62,7 +62,7 @@ class HomeController extends Controller
     {
         $titulo   = 'Nuevo título';
         $title_id = null;
-        
+
         return view('content_title', compact('titulo', 'title_id'));
     }
 
@@ -93,23 +93,5 @@ class HomeController extends Controller
 
     public function sitemap()
     {
-
-        // creamos el nuevo objeto sitemap
-        $sitemap_contents = \App::make("sitemap");
-        // establecer cache
-        /* $sitemap_contents->setCache('laravel.sitemap_contents', 3600); */
-        // obtener todos los posts de la base de datos
-        $blogs =  TitleUser::where('status_pay', 1)->orderBy('created_at', 'desc')->get();
-        // agregar todos los posts al sitemap
-        foreach ($blogs as $blog)
-        {
-            $url = url('titulo/'.$blog->slug);
-            $sitemap_contents->add($url, $blog->updated_at,'1.0','daily');
-        }
-        // mostrar el sitemap (options: 'xml' (default), 'html', 'txt', 'ror-rss', 'ror-rdf')
-        return $sitemap_contents->render('xml');
-
-      
     }
-
 }
